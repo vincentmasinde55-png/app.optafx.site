@@ -1,2 +1,2 @@
 # optafx.site
-Vinteltool your trusted ultimate trading deriv third party website
+OptaFX your trusted ultimate trading deriv third party website

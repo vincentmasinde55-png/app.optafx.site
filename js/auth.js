@@ -1,22 +1,23 @@
-const APP_ID = "33tOVg0Ab0mwjyV0Uwiuq";
+
+const APP_ID = CONFIG.33tOVg0Ab0mwjyV0Uwiuq;
 
 function login() {
-    window.location.href =
-     `https://oauth.deriv.com/oauth2/authorize?app_id=${33tOVg0Ab0mwjyV0Uwiuq}`;
+  const url =
+    `https://oauth.deriv.com/oauth2/authorize?app_id=${33tOVg0Ab0mwjyV0Uwiuq}`;
+  window.location.href = url;
 }
 
 function getToken() {
-    const params = new URLSearchParams(window.location.search);
+  const hash = window.location.hash;
+  const params = new URLSearchParams(hash.replace("#", ""));
+  return params.get("access_token");
+}
 
-    const token =
-        params.get("token") ||
-        params.get("acct1") ||
-        localStorage.getItem("deriv_token");
-
-    if (token) {
-        localStorage.setItem("deriv_token", token);
-        return token;
-    }
-
-    return null;
+function saveSession() {
+  const token = getToken();
+  if (token) {
+    localStorage.setItem("deriv_token", token);
+    return token;
+  }
+  return localStorage.getItem("deriv_token");
 }

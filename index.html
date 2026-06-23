@@ -43,3 +43,38 @@ location.href=`https://oauth.deriv.com/oauth2/authorize?app_id=${33tOVg0Ab0mwjyV
 
 </body>
 </html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OptaFX</title></title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="panel">
+
+    <h1>📊 Pro Trading Terminal</h1>
+
+    <button onclick="login()">Login Deriv</button>
+
+    <h2 id="price">--</h2>
+    <h3 id="rsi">RSI: --</h3>
+    <h3 id="signal">--</h3>
+
+    <button onclick="buyCall()">BUY CALL 📈</button>
+    <button onclick="buyPut()">BUY PUT 📉</button>
+
+  </div>
+
+  <script src="config.js"></script>
+  <script src="auth.js"></script>
+  <script src="ws-market.js"></script>
+  <script src="candles.js"></script>
+  <script src="indicators.js"></script>
+  <script src="trading.js"></script>
+  <script src="app.js"></script>
+
+</body>
+  </html>
